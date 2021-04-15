@@ -1,13 +1,26 @@
 // 課題①-1
 
-for (var i = 1; i <= 100; i++) {
-  if (i % 15 === 0) {
-    console.log("FizzBuzz",i);
+// for (var i = 1; i <= 100; i++) {
+//   if (i % 15 === 0) {
+//     console.log("FizzBuzz",i);
+//   }
+//   else if (i % 3 === 0){
+//     console.log("Fizz",i);
+//   }
+//   else if(i % 5 === 0){
+//     console.log("Buzz",i);
+//   }
+// }
+
+// 課題①-2
+let num = 0;
+
+while(num < 5) {
+  let result = prompt('日本の首都は？');
+  if ( result !== '東京'){
+    alert('不正解です！');
   }
-  else if (i % 3 === 0){
-    console.log("Fizz",i);
-  }
-  else if(i % 5 === 0){
-    console.log("Buzz",i);
+  else{
+    alert('正解です！');
   }
 }
