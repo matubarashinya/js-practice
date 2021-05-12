@@ -1,6 +1,6 @@
 // 課題①-3
 
-function alertFunction() {
+function AddTask() {
   let flag = 0;
   let tasks = [];
   while(flag < 5){
@@ -15,5 +15,8 @@ function alertFunction() {
     }
     flag ++;
   }
-}
+};
+
+window.onload = AddTask();
+
 
