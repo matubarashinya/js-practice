@@ -1,14 +1,23 @@
 
-let flag = 0;
+// 課題①-3
 
-while(flag == 0) {
-  let quiz = prompt('日本の首都は？');
-  if (quiz !== '東京'){
-    alert('不正解です！');
+function AddTask() {
+  let flag = 0;
+  let tasks = [];
+  while(flag < 5){
+    let task = prompt('タスクを入力してください');
+    tasks.push(task);
+    alert('新しいタスクを追加しました')
+    console.log("===========");
+    console.log("現在持ってるタスク一覧");
+    console.log("===========");
+    for (let i = 0; i < tasks.length; i++){
+      console.log(i + ":" + tasks[i]);
+    }
+    flag ++;
   }
-  else{
-    alert('正解です！');
-    flag = 1;
-  }
-}
+};
+
+window.onload = AddTask();
+
 
