@@ -1,42 +1,30 @@
+document.getElementById("form-button").onclick = function() {
 
-// 課題①-4
+  let f_number = document.getElementById("fizznumber").value;
+  let b_number = document.getElementById("buzznumber").value;
+  let parent = document.getElementById('answer');
+ 
 
-function AddTask(){
-
-  const tasks = [
-    {
-      content: "机を片付ける",
-      genre: "掃除",
-    },
-    {
-      content: "牛乳を買う",
-      genre: "買い物",
-    },
-    {
-      content: "散歩する",
-      genre: "運動",
+  if(isNaN(f_number) || isNaN(b_number)) {
+    var e = document.createElement("p");
+    e.innerHTML = "整数値を入力してください";
+    parent.appendChild(e);
+  } else {
+    for (var i = 1; i < 99; i++) {
+      var e = document.createElement("div");
+      if (i % f_number === 0 && i % b_number === 0) {
+        e.innerText = "FizzBuzz" + " " + i ;
+        parent.appendChild(e);
+      }
+      else if (i % f_number === 0){
+        e.innerText = "Fizz" + " " + i ;
+        parent.appendChild(e);
+      }
+      else if(i % b_number === 0){
+        e.innerText = "Buzz" + " " + i ;
+        parent.appendChild(e);
+      }
     }
-  ];
+  }
+}
 
-  console.log("===========");
-  console.log("現在持ってるタスク一覧");
-  console.log("===========");
-  tasks.forEach((task, index) => {
-    console.log(index + ": [内容]" + task.content + "、[ジャンル]" + task.genre);
-  });
-  let content = prompt('内容を追加してください');
-  let genre = prompt('ジャンルを追加してください');
-  tasks.push({ content: content, genre: genre});
-  alert('新しいタスクを追加しました');
-  
-  console.log("===========");
-  console.log("現在持ってるタスク一覧");
-  console.log("===========");
-  tasks.forEach((task, index) => {
-    console.log(index + ": [内容]" + task.content + "、[ジャンル]" + task.genre);
-  });
-
-};
-
-
-AddTask();
