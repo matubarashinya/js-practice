@@ -1,15 +1,40 @@
-let i = 0;
+let todos = []
 
 document.getElementById("addTask").onclick = function() {
 
   const taskContent = document.getElementById("task_content").value;
   const statusDisplay = document.getElementById("status_display");
- 
-  if(taskContent) {
+  
+  todos.push({comment: taskContent, status: "作業中"});
 
-    const e = document.createElement("p");
-    e.innerHTML = i + " " + taskContent + " " + '<button type="button">作業中</button>' + " " + '<button type="button">削除</button>';
-    statusDisplay.appendChild(e);
-    i++ ;
-  };
+  todos.forEach((todo, index) => {
+    
+    const tr = document.createElement('tr');
+    
+    const tdId = document.createElement('td');
+    tdId.innerHTML = index;
+    tr.appendChild(tdId);
+
+    const tdComment = document.createElement('td');
+    tdComment.innerHTML = todo.comment;
+    tr.appendChild(tdComment);
+
+    const tdStatus = document.createElement('td');
+    const inputStatus = document.createElement('input');
+    inputStatus.type = "submit";
+    inputStatus.value = todo.status;
+    inputStatus.name = "button";
+    const tdDeleteButton = document.createElement('input');
+    tdDeleteButton.type = "submit";
+    tdDeleteButton.value = "削除";
+    tdDeleteButton.name = "button";
+    tdStatus.appendChild(inputStatus);
+    tdStatus.appendChild(tdDeleteButton);
+    tr.appendChild(tdStatus);
+
+    statusDisplay.appendChild(tr);
+    console.log(index);
+  });
 }
+
+

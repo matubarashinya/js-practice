@@ -15,23 +15,30 @@
     <input type="radio" name="skill" value="word">作業中
     <input type="radio" name="skill" value="word">完了
   </div>
-  <div style="display: flex; font-weight: bold; width: 200px;">
-    <p style="margin-right: 5px;">ID</p>
-    <p style="margin-right: 5px;">コメント</p>
-    <p>状態</p>
-  </div>
-  <div id="status_display">
 
-  </div>
+  <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>コメント</th>
+            <th>状態</th>
+        </tr>
+    </thead>
+    <tbody id="status_display">
+
+    </tbody>
+  </table>
+
   <div>
     <h1>
       新規タスクの追加
     </h1>
-    <input type="text" value="" name="commet" id="task_content" autocomplete="off">
+    <input type="text" value="" name="commet" id="task_content">
     <input type="submit" value="追加" id="addTask">
   </div>
-  
   
   <script src="main.js"></script>
 </body>
 </html>
+
+
