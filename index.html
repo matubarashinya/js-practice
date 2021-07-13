@@ -8,22 +8,37 @@
 </head>
 <body>
   <h1>
-    FizzBuzz問題
+    ToDoリスト
   </h1>
   <div>
-    <p>
-      <label>FizzNum: <input type="text" size="25" placeholder="整数値を入力してください" id="fizznumber"></label>
-    </p>
-    <p>
-      <label>BuzzNum: <input type="text" size="25" placeholder="整数値を入力してください" id="buzznumber"></label>
-    </p>
-    <input type="submit" value="実行" id="form-button">
+    <input type="radio" name="skill" value="word">すべて
+    <input type="radio" name="skill" value="word">作業中
+    <input type="radio" name="skill" value="word">完了
   </div>
-  <p>
-    【出力】
-    <div id= "answer">
-    </div>
-  </p>
+
+  <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>コメント</th>
+            <th>状態</th>
+        </tr>
+    </thead>
+    <tbody id="status_display">
+
+    </tbody>
+  </table>
+
+  <div>
+    <h1>
+      新規タスクの追加
+    </h1>
+    <input type="text" value="" name="commet" id="task_content">
+    <input type="submit" value="追加" id="addTask">
+  </div>
+  
   <script src="main.js"></script>
 </body>
 </html>
+
+

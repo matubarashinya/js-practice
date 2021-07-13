@@ -1,28 +1,40 @@
-document.getElementById("form-button").onclick = function() {
+let todos = []
 
-  const fuzzNumber = document.getElementById("fizznumber").value;
-  const buzzNumber = document.getElementById("buzznumber").value;
-  const addElement = document.getElementById('answer');
- 
+document.getElementById("addTask").addEventListener('click', () => {
 
-  if(isNaN(fuzzNumber) || isNaN(buzzNumber)) {
-    const e = document.createElement("p");
-    e.innerHTML = "整数値を入力してください";
-    addElement.appendChild(e);
-  } else {
-    for (const i = 1; i < 99; i++) {
-      const v = document.createElement("div");
-      if (i % fuzzNumber === 0 && i % buzzNumber === 0) {
-        v.innerText = "FizzBuzz" + " " + i ;
-        addElement.appendChild(v);
-      } else if (i % fuzzNumber === 0){
-        v.innerText = "Fizz" + " " + i ;
-        addElement.appendChild(v);
-      } else if(i % buzzNumber === 0){
-        v.innerText = "Buzz" + " " + i ;
-        addElement.appendChild(v);
-      }
-    }
-  }
-}
+  const taskContent = document.getElementById("task_content").value;
+  const statusDisplay = document.getElementById("status_display");
+  statusDisplay.textContent = '';
+
+  todos.push({comment: taskContent, status: "作業中"});
+
+  todos.forEach((todo, index) => {
+    
+    const tr = document.createElement('tr');
+    
+    const tdId = document.createElement('td');
+    tdId.innerHTML = index;
+    tr.appendChild(tdId);
+
+    const tdComment = document.createElement('td');
+    tdComment.innerHTML = todo.comment;
+    tr.appendChild(tdComment);
+
+    const tdStatus = document.createElement('td');
+    const inputStatus = document.createElement('input');
+    inputStatus.type = "submit";
+    inputStatus.value = todo.status;
+    inputStatus.name = "button";
+    const tdDeleteButton = document.createElement('input');
+    tdDeleteButton.type = "submit";
+    tdDeleteButton.value = "削除";
+    tdDeleteButton.name = "button";
+    tdStatus.appendChild(inputStatus);
+    tdStatus.appendChild(tdDeleteButton);
+    tr.appendChild(tdStatus);
+
+    statusDisplay.appendChild(tr);
+  });
+});
+
 
