@@ -1,10 +1,11 @@
 let todos = []
 
-document.getElementById("addTask").onclick = function() {
+document.getElementById("addTask").addEventListener('click', () => {
 
   const taskContent = document.getElementById("task_content").value;
   const statusDisplay = document.getElementById("status_display");
-  
+  statusDisplay.textContent = '';
+
   todos.push({comment: taskContent, status: "作業中"});
 
   todos.forEach((todo, index) => {
@@ -33,8 +34,7 @@ document.getElementById("addTask").onclick = function() {
     tr.appendChild(tdStatus);
 
     statusDisplay.appendChild(tr);
-    console.log(index);
   });
-}
+});
 
 
