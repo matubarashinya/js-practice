@@ -4,8 +4,8 @@ document.getElementById("addTask").addEventListener('click', () => {
 
   const taskContent = document.getElementById("task_content").value;
   const statusDisplay = document.getElementById("status_display");
-  statusDisplay.textContent = '';
 
+  statusDisplay.textContent = '';
   todos.push({comment: taskContent, status: "作業中"});
 
   todos.forEach((todo, index) => {
