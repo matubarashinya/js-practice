@@ -7,6 +7,38 @@
   <title>javascript1</title>
 </head>
 <body>
+  <h1>
+    ToDoリスト
+  </h1>
+  <div>
+    <input type="radio" name="skill" value="word">すべて
+    <input type="radio" name="skill" value="word">作業中
+    <input type="radio" name="skill" value="word">完了
+  </div>
+
+  <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>コメント</th>
+            <th>状態</th>
+        </tr>
+    </thead>
+    <tbody id="status_display">
+
+    </tbody>
+  </table>
+
+  <div>
+    <h1>
+      新規タスクの追加
+    </h1>
+    <input type="text" value="" name="commet" id="task_content">
+    <input type="submit" value="追加" id="addTask">
+  </div>
+  
   <script src="main.js"></script>
 </body>
 </html>
+
+
