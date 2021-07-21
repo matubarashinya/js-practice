@@ -11,6 +11,7 @@ document.getElementById("addTask").addEventListener('click', () => {
   todos.forEach((todo, index) => {
     
     const tr = document.createElement('tr');
+    tr.id = "child";
     
     const tdId = document.createElement('td');
     tdId.innerHTML = index;
@@ -29,12 +30,21 @@ document.getElementById("addTask").addEventListener('click', () => {
     tdDeleteButton.type = "submit";
     tdDeleteButton.value = "削除";
     tdDeleteButton.name = "button";
+    tdDeleteButton.id = "deleteTask";
+
     tdStatus.appendChild(inputStatus);
     tdStatus.appendChild(tdDeleteButton);
     tr.appendChild(tdStatus);
 
     statusDisplay.appendChild(tr);
   });
+
+  document.getElementById("deleteTask").addEventListener('click', () => {
+
+    let child = document.getElementById('child');
+    statusDisplay.removeChild(child);
+  });
 });
+
 
 
